@@ -2,10 +2,16 @@
 #include "cache.hpp"
 #include <string>
 
+
+int slowGetCache(int k){
+    return k;
+}
 int main (void) {
 
-LfuCache<std::string, int> cache;
-std::cout << "Hello, world!";
+LfuCache<int, int> cache(5);
 
+cache.findOrAdd(1, slowGetCache);
+
+ 
 return 0;
 }
