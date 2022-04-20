@@ -8,7 +8,7 @@ int slowGetCache(int k){
 }
 int main (void) {
 
-LfuCache<int, int> cache(5);
+LfuCache<int, int> cache(3);
 
 cache.findOrAdd(1, slowGetCache);
 
