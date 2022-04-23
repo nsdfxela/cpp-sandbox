@@ -24,7 +24,7 @@ V findOrAdd(K key, F addFunc) {
 	auto hit = data.find(key);
 	if(hit != data.end()) { //found in cache
         hit->second.counter++; 
-		itemsList.sort([](DataItem* i1, DataItem* i2) { return  i1->counter < i2->counter; });
+		itemsList.sort([](DataItem* i1, DataItem* i2) { return  i1->counter > i2->counter; });
 	 
 		std::cout << "hit \n";
 		return hit->second.value;
@@ -39,15 +39,17 @@ V findOrAdd(K key, F addFunc) {
 			std::cout << "cache is full \n";
 			
 			data.erase(itemsList.back()->key);
+		 
 			itemsList.pop_back();
 		} 
 		
 		//have more space in cache, go for it
 		std::pair<K,DataItem> pair(key, newItem);
 		auto insertIt = data.insert(pair);
-		//itemsList.insert(&(*insertIt));
+		DataItem* insertedItem = &data[key];
+		itemsList.push_back(insertedItem);
 		
-		itemsList.sort([](DataItem* i1, DataItem* i2) { return  i1->counter < i2->counter; });
+		itemsList.sort([](DataItem* i1, DataItem* i2) { return  i1->counter > i2->counter; });
 		std::cout << "miss \n";	
 		return newItem.value;
 	}

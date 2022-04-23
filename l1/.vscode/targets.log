@@ -12,12 +12,18 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # There is NO WARRANTY, to the extent permitted by law.
  
 
-# Make data base, printed on Sat Apr 23 14:28:13 2022
+ 
+# Make data base, printed on Sat Apr 23 15:01:27 2022
+ 
 
 # Variables
+ 
 
+ 
 # automatic
+ 
 <D = $(patsubst %/,%,$(dir $<))
+ 
 # automatic
 ?F = $(notdir $?)
 # environment
@@ -249,61 +255,60 @@ VSCODE_PID = 1286
 
 lfu.o: lfu.cpp
 #  Implicit rule search has not been done.
+#  Last modified 2022-04-23 14:29:43.945007258
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 4):
+	g++ -c -g lfu.cpp
+
+cache.o: cache.hpp cache.cpp
+#  Implicit rule search has not been done.
+#  Last modified 2022-04-23 14:58:16.78102326
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 6):
+	g++ -c -g cache.cpp
+
+all: lfu.o cache.o
+#  Command line target.
+#  Implicit rule search has not been done.
 #  Implicit/static pattern stem: ''
-#  Last modified 2022-04-23 13:21:05.134
+#  File does not exist.
 #  File has been updated.
 #  Needs to be updated (-q is set).
 # automatic
-# @ := lfu.o
+# @ := all
 # automatic
 # % := 
 # automatic
 # * := 
 # automatic
-# + := lfu.cpp
+# + := lfu.o cache.o
 # automatic
 # | := 
 # automatic
-# < := lfu.cpp
+# < := lfu.o
 # automatic
-# ^ := lfu.cpp
+# ^ := lfu.o cache.o
 # automatic
-# ? := lfu.cpp
+# ? := lfu.o cache.o
 # variable set hash-table stats:
 # Load=8/32=25%, Rehash=0, Collisions=1/11=9%
-#  recipe to execute (from 'Makefile', line 4):
-	g++ -c lfu.cpp
-
-cache.o: cache.hpp cache.cpp
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-#  recipe to execute (from 'Makefile', line 6):
-	g++ -c  cache.cpp
-
-all: lfu.o cache.o
-#  Command line target.
-#  Implicit rule search has not been done.
-#  File does not exist.
-#  File has been updated.
-#  Needs to be updated (-q is set).
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/3=0%
 #  recipe to execute (from 'Makefile', line 2):
 	g++ -o lfu lfu.o cache.o
- 
 
- 
 # Not a target:
 .SUFFIXES:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
+ 
 # Not a target:
+ 
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-04-17 16:49:02.096796238
+#  Last modified 2022-04-23 15:01:07.885024859
 #  File has been updated.
 #  Successfully updated.
 
@@ -322,9 +327,10 @@ lfu.cpp:
 
 # Not a target:
 cache.cpp:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+#  Implicit rule search has been done.
+#  Last modified 2022-04-18 17:49:34.960337034
+#  File has been updated.
+#  Successfully updated.
 
 clean:
 #  Implicit rule search has not been done.
@@ -335,9 +341,10 @@ clean:
 
 # Not a target:
 cache.hpp:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+#  Implicit rule search has been done.
+#  Last modified 2022-04-23 14:57:52.493023033
+#  File has been updated.
+#  Successfully updated.
 
 # files hash-table stats:
 # Load=10/1024=1%, Rehash=0, Collisions=0/29=0%
@@ -353,6 +360,6 @@ cache.hpp:
 # strcache performance: lookups = 33 / hit rate = 51%
 # hash-table stats:
 # Load=16/8192=0%, Rehash=0, Collisions=1/33=3%
-# Finished Make data base on Sat Apr 23 14:28:13 2022
+# Finished Make data base on Sat Apr 23 15:01:27 2022
 
  
