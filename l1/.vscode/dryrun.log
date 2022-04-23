@@ -1,0 +1,9 @@
+make all --dry-run --keep-going --print-directory
+make: Entering directory '/home/nsdfxela/repos/cpp-sandbox/l1'
+ 
+g++ -c lfu.cpp
+ 
+g++ -o lfu lfu.o cache.o
+ 
+make: Leaving directory '/home/nsdfxela/repos/cpp-sandbox/l1'
+ 
